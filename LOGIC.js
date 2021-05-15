@@ -67,9 +67,14 @@ nine.onclick = function () {
 //DECIMAL
 //Need to add code to make sure number doesn't already have a decimal
 decimal.onclick = function () {
+  let testRegex = /'.'/;
+  console.log(testRegex.test(num1));
+  if (testRegex.test(num1) == false){
     num1 += ".";
-    document.getElementById("answer").innerHTML = num1;
-};
+    return document.getElementById("answer").innerHTML = num1;
+    console.log("regexWorks")} else{
+   return document.getElementById("answer").innerHTML = num1;}
+}; 
 
 //OPERATORS
 //ADD
