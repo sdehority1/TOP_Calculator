@@ -1,161 +1,155 @@
+//STATIC 
 let num1 = [];
 let num2 = [];
 let operand = [""];
 document.getElementById("answer").innerHTML = 0;
 
+//EQUALS FUNCTION 
 let equalsFunc = () => {
   if (operand == "+"){
-    document.getElementById("answer").innerHTML = (parseInt(num1, 10)) + (parseInt(num2, 10));
+    document.getElementById("answer").innerHTML = Number(num1.join("")) + Number(num2.join(""))
  } 
  if (operand == "-"){
-    document.getElementById("answer").innerHTML = (parseInt(num1, 10)) - (parseInt(num2, 10));
+  document.getElementById("answer").innerHTML = Number(num1.join("")) - Number(num2.join(""))
  } 
   if (operand == "*"){
-    document.getElementById("answer").innerHTML = (parseInt(num1, 10)) * (parseInt(num2, 10));
+    document.getElementById("answer").innerHTML = Number(num1.join("")) * Number(num2.join(""))
  } 
   if (operand == "/"){
-    document.getElementById("answer").innerHTML = (parseInt(num1, 10)) / (parseInt(num2, 10));
+    document.getElementById("answer").innerHTML = Number(num1.join("")) / Number(num2.join(""))
  } 
 };
 
 //ONCLICKS
-
 //ZERO
 zero.onclick = function () {
   if (operand == "") {
-   num1 += "0";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "0";
-   document.getElementById("answer").innerHTML = num2;
- }
+    num1.push(0);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(0);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 //ONE
 one.onclick = function () {
- if (operand == "") {
-   num1 += "1";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand == "*"||"+"||"-"||"/") {
-   num2 += "1";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(1);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(1);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 //TWO
 two.onclick = function () {
- if (operand == "") {
-   num1 += "2";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "2";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(2);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(2);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 //THREE
 three.onclick = function () {
- if (operand == "") {
-   num1 += "3";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "3";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(3);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(3);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //FOUR
 four.onclick = function () {
- if (operand == "") {
-   num1 += "4";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "4";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(4);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(4);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //FIVE
 five.onclick = function () {
- if (operand == "") {
-   num1 += "5";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "5";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(5);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(5);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //SIX
 six.onclick = function () {
- if (operand == "") {
-   num1 += "6";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "6";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(6);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(6);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //SEVEN
 seven.onclick = function () {
- if (operand == "") {
-   num1 += "7";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "7";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(7);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(7);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //EIGHT
 eight.onclick = function () {
- if (operand == "") {
-   num1 += "8";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "8";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(8);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(8);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //NINE
 nine.onclick = function () {
- if (operand == "") {
-   num1 += "9";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += "9";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(9);
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(9);
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //DECIMAL
 //Need to add code to make sure number doesn't already have a decimal
 decimal.onclick = function () {
- if (operand == "") {
-   num1 += ".";
-   document.getElementById("answer").innerHTML = num1;
- } else if (operand ==  "*"||"+"||"-"||"/") {
-   num2 += ".";
-   document.getElementById("answer").innerHTML = num2;
- }
+  if (operand == "") {
+    num1.push(".");
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand ==  "*"||"+"||"-"||"/") {
+    num2.push(".");
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
-//DECIMAL
-//Need to add code to make sure number doesn't already have a decimal
-decimal.onclick = function () {
-  let testRegex = /'.'/;
-  
-  if (testRegex.test(num1) == false){
-    num1 += ".";
-    return document.getElementById("answer").innerHTML = num1;
-    console.log("regexWorks")} else{
-   return document.getElementById("answer").innerHTML = num1;}
-}; 
+
 
 //OPERATORS
-//ADD
+//ADD This is working as intended but you might need to refactor what's above to ensure that you can keep adding indefinitely 
 add.onclick = function () {
-  operand = "+";
-};
+  if (operand ==  "*"||"+"||"-"||"/"){
+   equalsFunc(); 
+  }
+  operand = "+"
+  };
 
 //SUBTRACT
 subtract.onclick = function () {
@@ -181,7 +175,7 @@ AC.onclick = function () {
   document.getElementById("answer").innerHTML = 0;
 };
 
-//EQUALS
+//EQUALS KEY 
 equals.onclick = function(){ 
   equalsFunc();
 };
