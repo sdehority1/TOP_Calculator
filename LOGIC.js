@@ -6,27 +6,30 @@ document.getElementById("answer").innerHTML = 0;
 
 //EQUALS FUNCTION 
 let equalsFunc = () => {
-  if (operand == "+"){
+  if (operand == "+") {
     document.getElementById("answer").innerHTML = Number(num1.join("")) + Number(num2.join(""))
- } 
- if (operand == "-"){
-  document.getElementById("answer").innerHTML = Number(num1.join("")) - Number(num2.join(""))
- } 
-  if (operand == "*"){
+  }
+  if (operand == "-") {
+    document.getElementById("answer").innerHTML = Number(num1.join("")) - Number(num2.join(""))
+  }
+  if (operand == "*") {
     document.getElementById("answer").innerHTML = Number(num1.join("")) * Number(num2.join(""))
- } 
-  if (operand == "/"){
+  }
+  if (operand == "/") {
     document.getElementById("answer").innerHTML = Number(num1.join("")) / Number(num2.join(""))
- } 
+  }
 };
 
 //ONCLICKS
 //ZERO
 zero.onclick = function () {
+  if (num1 == 0) {
+    return document.getElementById("answer").innerHTML = 0;
+  }
   if (operand == "") {
     num1.push(0);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(0);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -36,17 +39,19 @@ one.onclick = function () {
   if (operand == "") {
     num1.push(1);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(1);
     document.getElementById("answer").innerHTML = num2.join("");
   }
 };
+
+
 //TWO
 two.onclick = function () {
   if (operand == "") {
     num1.push(2);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(2);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -56,7 +61,7 @@ three.onclick = function () {
   if (operand == "") {
     num1.push(3);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(3);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -67,7 +72,7 @@ four.onclick = function () {
   if (operand == "") {
     num1.push(4);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(4);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -78,7 +83,7 @@ five.onclick = function () {
   if (operand == "") {
     num1.push(5);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(5);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -89,7 +94,7 @@ six.onclick = function () {
   if (operand == "") {
     num1.push(6);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(6);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -100,7 +105,7 @@ seven.onclick = function () {
   if (operand == "") {
     num1.push(7);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(7);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -111,7 +116,7 @@ eight.onclick = function () {
   if (operand == "") {
     num1.push(8);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(8);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -122,7 +127,7 @@ nine.onclick = function () {
   if (operand == "") {
     num1.push(9);
     document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
+  } else if (operand == "*" || "+" || "-" || "/") {
     num2.push(9);
     document.getElementById("answer").innerHTML = num2.join("");
   }
@@ -131,38 +136,81 @@ nine.onclick = function () {
 //DECIMAL
 //Need to add code to make sure number doesn't already have a decimal
 decimal.onclick = function () {
-  if (operand == "") {
-    num1.push(".");
-    document.getElementById("answer").innerHTML = num1.join("");
-  } else if (operand ==  "*"||"+"||"-"||"/") {
-    num2.push(".");
-    document.getElementById("answer").innerHTML = num2.join("");
-  }
 };
 
+//PLUS MINUS
+//Need to ensure that number that is a result of two nums being added can be made negative/positive on click 
+plusMinus.onclick = function () {
+  if (num1 == 0) {
+    return document.getElementById("answer").innerHTML = 0;
+  }
+  if (num1.length>0 && operand=="") {
+    if (num1.includes('-') === false) {
+      num1.unshift('-');
+      document.getElementById("answer").innerHTML = num1.join("");
+    } else if (num1.includes('-') === true) {
+      1
+      num1.shift();
+      document.getElementById("answer").innerHTML = num1.join("");
+    }
+  }
+  else if (operand !== "") {
+    if (num2.includes('-') === false) {
+      num2.unshift('-');
+      document.getElementById("answer").innerHTML = num2.join("");
+    } else if (num2.includes('-') === true) {
+      num2.shift();
+      document.getElementById("answer").innerHTML = num2.join("");
+    }
+  }
+}
 
 
 //OPERATORS
-//ADD This is working as intended but you might need to refactor what's above to ensure that you can keep adding indefinitely 
 add.onclick = function () {
-  if (operand ==  "*"||"+"||"-"||"/"){
-   equalsFunc(); 
-  }
-  operand = "+"
+  if (operand == "*" || "+" || "-" || "/") {
+    equalsFunc();
+    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
+    num1 = (document.getElementById("answer").innerHTML).split('')
+    num2 = [];
+    operand = "";
   };
+  operand = "+"
+};
 
 //SUBTRACT
 subtract.onclick = function () {
+  if (operand == "*" || "+" || "-" || "/") {
+    equalsFunc();
+    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
+    num1 = (document.getElementById("answer").innerHTML).split('');
+    num2 = [];
+    operand = "";
+  }
   operand = "-";
 };
 
 //MULTIPLY
 multiply.onclick = function () {
+  if (operand == "*" || "+" || "-" || "/") {
+    equalsFunc();
+    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
+    num1 = (document.getElementById("answer").innerHTML).split('');
+    num2 = [];
+    operand = "";
+  }
   operand = "*";
 };
 
 //DIVIDE
 divide.onclick = function () {
+  if (operand == "*" || "+" || "-" || "/") {
+    equalsFunc();
+    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
+    num1 = (document.getElementById("answer").innerHTML).split('');
+    num2 = [];
+    operand = "";
+  }
   operand = "/";
 };
 
@@ -176,6 +224,6 @@ AC.onclick = function () {
 };
 
 //EQUALS KEY 
-equals.onclick = function(){ 
+equals.onclick = function () {
   equalsFunc();
 };
