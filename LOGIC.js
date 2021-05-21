@@ -25,7 +25,7 @@ let equalsFunc = () => {
   if (operand == "/" && num2 == 0) {
     document.getElementById("answer").innerHTML = "Error. Click AC."
   }
-};
+}; 
 
 //ONCLICKS
 //ZERO
