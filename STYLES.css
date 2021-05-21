@@ -1,57 +1,72 @@
-table {
-    border: 2px solid black;
-    width: 20%;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 2%;
-    background-color: black;
-    table-layout: fixed;
-    height: 350px;
-  }
 
-  h1{
-   text-align: center;
-   margin-top: 5%;
-  }
-  
-  th,td {
-    border: 0.5px solid black;
-    border-radius: 6px;
-    text-align: center;
-  }
-  
-  #answer {
-    text-align: right;
-    background-color: white;
-    border: 1px solid;
-  }
-  
-  .numbers {
-    background-color: gray;
-    color: white;
-    
-  }
-  
-  .numbers:hover {
-    box-shadow: 1px .5px gray;
-  }
-  
-  .operators {
-    background-color: orange;
-    color: white;
-  }
-  .operators:hover {
-    box-shadow: 1px .5px orange;
-  }
-  
-  #AC {
-    color: white;
-    background-color: blue;
-    border: 1px solid white;
-  }
-  
-  #AC:hover {
-    box-shadow: 1px .5px white;
-  }
-  
-  
+
+table {
+  border: 2px solid black;
+  width: 20%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 2%;
+  background-color: black;
+  table-layout: fixed;
+  height: 350px;
+  font-family: Trebuchet MS;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+th,
+td {
+  border: 0.5px solid black;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#answer {
+  text-align: right;
+  background-color: white;
+  border: 1px solid;
+}
+
+.numbers {
+  background-color: gray;
+  color: white;
+}
+
+.numbers:active {
+  background-color: #33b9bb;
+}
+
+.numbers:hover {
+  box-shadow: 1px 0.5px gray;
+}
+
+.operators {
+  background-color: orange;
+  color: white;
+  font-size: 21px;
+}
+.operators:hover {
+  box-shadow: 1px 0.5px orange;
+}
+.operators:active {
+  background-color: #33b9bb;
+}
+
+#AC {
+  color: white;
+  background-color: blue;
+  border: 1px solid white;
+}
+
+#AC:hover {
+  box-shadow: 1px 0.5px white;
+}
+
+#AC:active {
+  background-color: #33b9bb;
+}
+
+ 
