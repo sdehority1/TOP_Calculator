@@ -1,3 +1,5 @@
+//https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator
+
 //STATIC 
 let num1 = [];
 let num2 = [];
@@ -5,6 +7,7 @@ let operand = [""];
 document.getElementById("answer").innerHTML = 0;
 
 //EQUALS FUNCTION 
+//Using number() causes issues with floating decimals...maybe refactor with an if statement to use parseFloat if arr[0] is a decimal and parseNum if arr[0] is anything else
 let equalsFunc = () => {
   if (operand == "+") {
     document.getElementById("answer").innerHTML = Number(num1.join("")) + Number(num2.join(""))
@@ -15,8 +18,12 @@ let equalsFunc = () => {
   if (operand == "*") {
     document.getElementById("answer").innerHTML = Number(num1.join("")) * Number(num2.join(""))
   }
-  if (operand == "/") {
+  if (operand == "/" && num2 !== 0) {
     document.getElementById("answer").innerHTML = Number(num1.join("")) / Number(num2.join(""))
+  }
+  //NEED TO FIGURE OUT HOW TO AVOID DOUBLE DIVIDE TRIGGERING ERROR
+  if (operand == "/" && num2 == 0) {
+    document.getElementById("answer").innerHTML = "Error. Click AC."
   }
 };
 
@@ -25,7 +32,7 @@ let equalsFunc = () => {
 zero.onclick = function () {
   if (num1 == 0) {
     return document.getElementById("answer").innerHTML = 0;
-  }
+}
   if (operand == "") {
     num1.push(0);
     document.getElementById("answer").innerHTML = num1.join("");
@@ -136,6 +143,13 @@ nine.onclick = function () {
 //DECIMAL
 //Need to add code to make sure number doesn't already have a decimal
 decimal.onclick = function () {
+  if (operand == "") {
+    num1.push(".");
+    document.getElementById("answer").innerHTML = num1.join("");
+  } else if (operand == "*" || "+" || "-" || "/") {
+    num2.push(".");
+    document.getElementById("answer").innerHTML = num2.join("");
+  }
 };
 
 //PLUS MINUS
@@ -144,7 +158,7 @@ plusMinus.onclick = function () {
   if (num1 == 0) {
     return document.getElementById("answer").innerHTML = 0;
   }
-  if (num1.length>0 && operand=="") {
+  if (num1.length > 0 && operand == "") {
     if (num1.includes('-') === false) {
       num1.unshift('-');
       document.getElementById("answer").innerHTML = num1.join("");
@@ -170,7 +184,6 @@ plusMinus.onclick = function () {
 add.onclick = function () {
   if (operand == "*" || "+" || "-" || "/") {
     equalsFunc();
-    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
     num1 = (document.getElementById("answer").innerHTML).split('')
     num2 = [];
     operand = "";
@@ -182,7 +195,6 @@ add.onclick = function () {
 subtract.onclick = function () {
   if (operand == "*" || "+" || "-" || "/") {
     equalsFunc();
-    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
     num1 = (document.getElementById("answer").innerHTML).split('');
     num2 = [];
     operand = "";
@@ -194,7 +206,6 @@ subtract.onclick = function () {
 multiply.onclick = function () {
   if (operand == "*" || "+" || "-" || "/") {
     equalsFunc();
-    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
     num1 = (document.getElementById("answer").innerHTML).split('');
     num2 = [];
     operand = "";
@@ -206,14 +217,12 @@ multiply.onclick = function () {
 divide.onclick = function () {
   if (operand == "*" || "+" || "-" || "/") {
     equalsFunc();
-    //num1 = ("" + document.getElementById("answer").innerHTML).split('')
     num1 = (document.getElementById("answer").innerHTML).split('');
     num2 = [];
     operand = "";
   }
   operand = "/";
 };
-
 
 //CLEAR
 AC.onclick = function () {
@@ -227,3 +236,4 @@ AC.onclick = function () {
 equals.onclick = function () {
   equalsFunc();
 };
+
